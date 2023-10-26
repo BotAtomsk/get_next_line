@@ -1,6 +1,10 @@
 
 #include "get_next_line.h"
 
+void	leaks(void) {
+	system("leaks -q main");
+}
+
 int main(void) {
 	/*
 	// imprimir nodos individuales
@@ -39,4 +43,6 @@ int main(void) {
 		free(str);
 		i++;
 	}
+
+	atexit(leaks);
 }
